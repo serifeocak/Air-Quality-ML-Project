@@ -1,95 +1,87 @@
-Makine Öğrenmesi Yöntemleri ile Hava Kalitesi Analizi
-🌟 Proje Tanıtımı
-Bu proje, 
+# 🌍 Makine Öğrenmesi Yöntemleri ile Hava Kalitesi Analizi  
 
-SAP ve Teknolojide Kadın Derneği iş birliğiyle yürütülen “Güçlü Kadınlarla Dijital Yarınlar” Python ile Yapay Zeka Eğitim Programı kapsamında hazırlanan bir bitirme projesidir.
+## 📌 Proje Tanıtımı  
+Bu proje, **SAP** ve **Teknolojide Kadın Derneği** iş birliğiyle yürütülen  
+**“Güçlü Kadınlarla Dijital Yarınlar – Python ile Yapay Zeka Eğitim Programı”** kapsamında hazırlanan bir bitirme projesidir.  
 
-Projenin temel amacı, çeşitli çevresel parametre verilerini kullanarak hava kalitesini doğru bir şekilde 
+Projenin temel amacı, çeşitli çevresel parametreleri kullanarak **hava kalitesini sınıflandırmak ve tahmin etmek** için makine öğrenmesi algoritmalarının etkinliğini analiz etmektir.  
 
-sınıflandırmak ve tahmin etmek için makine öğrenmesi (ML) algoritmalarının etkinliğini analiz etmektir.
+---
 
-🎯 Hedef ve Veri Seti
-Hedef Değişken
-Hava kalitesini dört ana sınıfa (Çoklu Sınıflandırma) ayırmaktır:
+## 🎯 Hedef ve Veri Seti  
 
-Good (İyi)
+### 🎯 Hedef Değişken  
+Hava kalitesi, **çok sınıflı sınıflandırma** problemine göre 4 ana sınıfa ayrılmıştır:  
+- **Good (İyi)**  
+- **Moderate (Orta)**  
+- **Poor (Kötü)**  
+- **Hazardous (Tehlikeli)**  
 
-Moderate (Orta)
+### 📊 Veri Kaynağı ve Özellikler  
+- **Kaynak:** [Kaggle - Air Quality and Pollution Assessment](https://www.kaggle.com/)  
+- **Özellikler:**  
+  - Sıcaklık (Temperature)  
+  - Nem (Humidity)  
+  - Partikül Maddeler (PM2.5, PM10)  
+  - Gaz Kirlilikleri (NO2, SO2, CO)  
+  - Nüfus Yoğunluğu (Population_Density)  
+  - Sanayi Alanlarına Yakınlık (Proximity_to_Industrial_Areas)  
 
-Poor (Kötü)
+---
 
-Hazardous (Tehlikeli)
+## 🛠️ Metodoloji  
 
-Veri Kaynağı ve Özellikler
+Proje, standart bir veri bilimi iş akışını takip etmektedir:  
 
-Kaynak: Kaggle - Air Quality and Pollution Assessment.
+### 1️⃣ Veri Ön İşleme ve Analiz  
+- **Keşifsel Veri Analizi (EDA):** Veri yapısı, korelasyonlar ve sınıf dağılımı incelendi.  
+- **Eksik Değer Yönetimi:** Veri setinde eksik değer bulunmadı.  
+- **Aykırı Değer Analizi:** Kutu grafikleriyle aykırı değerler analiz edildi.  
+- **Kodlama & Ölçeklendirme:**  
+  - Hedef değişken (*Air Quality*) → Label Encoding  
+  - Bağımsız değişkenler → StandardScaler  
 
+### 2️⃣ Boyut İndirgeme  
+Yüksek boyutlu veriyi görselleştirmek ve model performansına etkisini test etmek için:  
+- **PCA (Principal Component Analysis)**  
+- **LDA (Linear Discriminant Analysis)**  
+- **t-SNE (t-distributed Stochastic Neighbor Embedding)**  
 
-Temel Özellikler: Sıcaklık (Temperature), Nem (Humidity), Partikül Maddeler (PM2.5, PM10), Gaz Kirlilikleri (NO2, SO2, CO), Nüfus Yoğunluğu (Population_Density) ve Sanayi Alanlarına Yakınlık (Proximity_to_Industrial_Areas) gibi çevresel ve demografik veriler kullanılmıştır.
+### 3️⃣ Makine Öğrenmesi Modelleri  
+Karşılaştırılan sınıflandırma algoritmaları:  
+- Lojistik Regresyon  
+- K-En Yakın Komşu (KNN)  
+- Karar Ağacı (Decision Tree)  
+- Rastgele Orman (Random Forest)  
+- Destek Vektör Makineleri (SVM)  
 
-🛠️ Metodoloji ve Uygulanan Teknikler
-Proje, standart bir veri bilimi iş akışını takip etmektedir:
+### 4️⃣ Gelişmiş Teknikler  
+- **Düzenlileştirme (Regularization):**  
+  - Lojistik Regresyon → L1 & L2  
+  - SVM → C parametresi  
+- **Kümeleme Analizi (Unsupervised):**  
+  - K-Means  
+  - DBSCAN  
 
-1. Veri Ön İşleme ve Analiz
+---
 
-Keşifsel Veri Analizi (EDA): Veri setinin yapısı, korelasyonları ve sınıf dağılımı incelenmiştir.
+## 🏆 Temel Çıkarımlar  
+- **Rastgele Orman** ve **SVM**, sınıflandırma görevinde en yüksek başarıyı göstermiştir.  
+- Düzenlileştirme teknikleri, **genelleştirme yeteneğini artırmıştır.**  
+- **LDA** ile boyut indirgeme, verilerin ayrıştırılmasında ve görselleştirilmesinde etkili olmuştur.  
 
+---
 
+## 🚀 Kullanılan Teknolojiler  
+Projede kullanılan başlıca teknolojiler ve kütüphaneler şunlardır:  
 
+- **Programlama Dili:** Python  
+- **Veri Analizi:** NumPy, Pandas  
+- **Makine Öğrenmesi:** Scikit-learn  
+- **Görselleştirme:** Matplotlib, Seaborn  
+- **Boyut İndirgeme:** PCA, LDA, t-SNE  
+- **Kümeleme:** K-Means, DBSCAN  
 
-Eksik Değer Yönetimi: Veri setinde eksik değere rastlanmamıştır.
-
-
-
-Aykırı Değer Analizi: Model performansını korumak için kutu grafikleriyle aykırı değerler analiz edilmiştir.
-
-
-
-Kodlama ve Ölçeklendirme: Kategorik hedef değişken (Air Quality) Label Encoding ile , bağımsız değişkenler ise 
-
-StandardScaler ile standardizasyon yapılarak ölçeklendirilmiştir.
-
-2. Boyut İndirgeme
-Yüksek boyutlu veriyi görselleştirmek ve model performansına etkisini test etmek için kullanılmıştır.
-
-
-
-PCA (Temel Bileşen Analizi) 
-
-
-LDA (Lineer Diskriminant Analizi) 
-
-
-t-SNE (t-Dağılımlı Stokastik Komşu Gömme) 
-
-3. Makine Öğrenmesi Modelleri
-Hava kalitesi sınıflamasını yapmak için çeşitli sınıflandırma algoritmaları karşılaştırılmıştır:
-
-Lojistik Regresyon
-
-K-En Yakın Komşu (KNN)
-
-Karar Ağacı (Decision Tree)
-
-Rastgele Orman (Random Forest)
-
-Destek Vektör Makineleri (SVM)
-
-4. Gelişmiş Teknikler
-
-Düzenlileştirme (Regularization): Aşırı öğrenmeyi (overfitting) önlemek için Lojistik Regresyon için L1 ve L2, SVM için C parametresi gibi teknikler denenmiştir.
-
-
-
-Kümeleme Analizi: Veri içindeki doğal grupları ve gizli desenleri denetimsiz bir şekilde keşfetmek için K-Means ve DBSCAN algoritmaları kullanılmıştır.
-
-🏆 Temel Çıkarımlar
-Sınıflandırma görevinde en başarılı sonuçları 
-
-Rastgele Orman ve SVM modelleri vermiştir.
+---
 
 
-Düzenlileştirme teknikleri, modellerin genelleştirme yeteneğini önemli ölçüde artırmıştır.
-
-
-Boyut indirgeme (özellikle LDA), veriyi daha iyi ayrıştırmaya ve görselleştirmeye olanak tanımıştır.
